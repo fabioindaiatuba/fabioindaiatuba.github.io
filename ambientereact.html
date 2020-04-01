@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorial ambiente React Native windows</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>   
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body class="has-navbar-fixed-top">
+    <header>
+      <nav class="navbar is-dark is-fixed-top role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img src="./assets/logo.png" class="rotateimg" alt="Logo">
+          </a>
+          <div id="navbar-burger-id" class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>  
+        </div>      
+        <div id="navbar-menu-id" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">
+              Início
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+
+          <div class="card">
+            <div class="card-content">
+              <div class="content">  
+                <h1>Configurando ambiente React Native no windows</h1>
+                <p>Nesse tutorial vamos configurar o ambiente para desenvolvimento mobile em React Native.</p>
+              
+                <h2>1- Instala&ccedil;&atilde;o Chocolatey</h2>
+                <p>Chocolatey &eacute; um gerenciador de pacotes
+                  popular para Windows, atrav&eacute;s dele que vamos instalar nossas depend&ecirc;ncias para que toda
+                  instala&ccedil;&atilde;o do react native ocorra bem.</p>
+                <p>Para instalar o Chocolatey, abriremos
+                  o&nbsp;powershell&nbsp;em modo&nbsp;administrador, e executaremos o seguinte comando:</p>
+                <pre><span>Set-ExecutionPolicy Bypass -Scope Process</span></pre>
+                <p>Isso far&aacute; com que nosso powershell
+                  n&atilde;o tenha nenhuma restri&ccedil;&atilde;o para executar scripts.</p>
+                <p>Logo ap&oacute;s vamos executar mais esse
+                  comando, esse sim ir&aacute; baixar e instalar o chocolatey:</p>
+                <pre><span >Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('<a href="https://chocolatey.org/install.ps1'" target="_blank" rel="noopener nofollow">https://chocolatey.org/install.ps1'</a>))</span></pre>
+                <p>Se a instala&ccedil;&atilde;o estiver dada
+                  certa ao executar &ldquo;choco&rdquo; no terminal ele dever&aacute; retornar a sua vers&atilde;o instalada.
+                </p>
+                <h2>2- Instala&ccedil;&atilde;o Node, Python2,
+                  JDK</h2>
+                <p>Com a janela do powershell ainda aberta,
+                  vamos instalar o node.js, python2 e o jdk8, usando o seguinte comando:</p>
+                <pre><span >choco install -y nodejs.install python2 jdk8</span></pre>
+                <p>Se a instala&ccedil;&atilde;o estiver correta
+                  voc&ecirc; conseguir&aacute; visualizar a vers&atilde;o de cada item instalado por exemplo:</p>
+                <pre><span >node -v</span></pre>
+                <h2>3- Instala&ccedil;&atilde;o React-Native-CLI
+                </h2>
+                <p>Para que consigamos criamos projetos e nosso
+                  computador reconhe&ccedil;a todas fun&ccedil;&otilde;es do react native cli, iremos instala-lo ainda com o
+                  powershell em modo administrador:</p>
+                <pre><span >npm install -g react-native-cli</span></pre>
+                <p>Se tudo estiver certo, voc&ecirc;
+                  conseguir&aacute; ver a vers&atilde;o react-native-cli instalada executando:</p>
+                <pre><span >react-native -v</span></pre>
+                <h2>4- Instala&ccedil;&atilde;o e
+                  configura&ccedil;&atilde;o do Android</h2>
+                <p>Apesar de n&atilde;o utilizar o Android
+                  Studio no desenvolvimento com react native sua instala&ccedil;&atilde;o tem algumas funcionalidades que iram
+                  nos
+                  ajudar a rodar a nossa aplica&ccedil;&atilde;o em um emulador ou direto no seu smartphone, como por exemplo o
+                  gerenciador de SDK ou o criador e gerenciador de emuladores, sem falar nas depend&ecirc;ncias para o android
+                  que
+                  ele j&aacute; nos traz.</p>
+                  <p><a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener nofollow">Clique aqui
+                    para
+                    baixar o Android Studio</a></p>
+                <p>Instale normalmente apenas apertando em
+                  &ldquo;Next&rdquo; at&eacute; que a instala&ccedil;&atilde;o seja conclu&iacute;da.</p>
+              
+                <figure class="fs ft fu fv fw fr co cp paragraph-image">
+                  <div class="co cp is">
+                    <div class="gc r gd ge">
+                      <div class="it r"><img class="nw su s t u fz ai gj" role="presentation" src="./assets/img001.png"
+                          sizes="656px" srcset="./assets/img001.png 552w, ./assets/img001.png 656w" width="656" height="481" />
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+                <p>Com o Android Studio aberto, clique
+                  em&nbsp;Configure &gt; SDK Manager, copie o local onde o SDK est&aacute; instalado que mais tarde iremos usar,
+                  depois de copiar selecione qual SDK deseja instalar e clique em OK, cada SDK tem sua vers&atilde;o android, eu
+                  instalei o Android 9.0(Pie) e o 10.0(Q), ap&oacute;s isso ele pedir&aacute; permiss&atilde;o para instalar,
+                  permita e instale.</p>
+                <figure class="fs ft fu fv fw fr co cp paragraph-image">
+                  <div class="iv iw gd ix ai">
+                    <div class="co cp iu">
+                      <div class="gc r gd ge">
+                        <div class="iy r"><img class="nw su s t u fz ai gj" role="presentation" src="./assets/img002.png"
+                            sizes="700px" srcset="./assets/img002.png 552w, ./assets/img002.png 700w" width="800"
+                            height="705" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+                <h2>5- Configura&ccedil;&atilde;o das
+                  Vari&aacute;veis de Ambiente</h2>
+                <p>Ap&oacute;s concluir todos os passo a cima,
+                  iremos configurar para que todo nosso sistema entenda algumas funcionalidades do android, iremos
+                  em&nbsp;Painel de
+                  Controle &gt; Sistema &gt; Configura&ccedil;&otilde;es avan&ccedil;adas do sistema &gt; Vari&aacute;veis de
+                  Ambiente&hellip;</p>
+                <figure class="fs ft fu fv fw fr co cp paragraph-image">
+                  <div class="co cp iz">
+                    <div class="gc r gd ge">
+                      <div class="ja r"><img class="nw su s t u fz ai gj" role="presentation" src="./assets/img003.png"
+                          sizes="619px" srcset="./assets/img003.png 552w, ./assets/img003.png 619w" width="619" height="587" />
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+                <p>Clique em Novo&hellip; dentro de
+                  Vari&aacute;veis de Usu&aacute;rio e preencha da seguinte forma, por&eacute;m no valor da vari&aacute;vel,
+                  cole
+                  aquele caminho que copiamos do SDK e clique em OK:</p>
+                <figure class="fs ft fu fv fw fr co cp paragraph-image">
+                  <div class="co cp jb">
+                    <div class="gc r gd ge">
+                      <div class="jc r"><img class="nw su s t u fz ai gj" role="presentation" src="./assets/img004.png"
+                          sizes="654px" srcset="./assets/img004.png 552w, ./assets/img004.png 654w" width="654" height="165" />
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+                <p>Depois selecione o Path da vari&aacute;vel de
+                  usu&aacute;rio e clique em Editar, agora clique em Novo e escreva o seguinte comando:</p>
+                <pre><span >%ANDROID_HOME%\platform-tools</span></pre>
+                <p>Clique em Novo novamente e escreva outro
+                  comando ap&oacute;s escrever clique em OK at&eacute; que fechem todas as janelas de vari&aacute;veis de
+                  Ambiente:
+                </p>
+                <pre><span >%ANDROID_HOME%\tools</span></pre>
+                <h2>E pronto.</h2>
+                <p>Para conferir se as vari&aacute;veis
+                  ambientes est&atilde;o funcionando corretamente, abra seu powershell e execute:</p>
+                <pre><span >adb devices</span></pre>
+                <p>Esse comando deve retornar uma lista de
+                  dispositivos detectados, caso tenha algum emulador rodando ou seu celular esteja plugado, ele deve ser listado
+                  ao
+                  executar esse comando, no meu caso ele retornou meu celular que estava plugado.</p>
+                <figure class="fs ft fu fv fw fr co cp paragraph-image">
+                  <div class="iv iw gd ix ai">
+                    <div class="co cp jo">
+                      <div class="gc r gd ge">
+                        <div class="jp r"><img class="nw su s t u fz ai gj" role="presentation" src="./assets/img005.png"
+                            sizes="449px" srcset="" width="449" height="240" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Close mobile & tablet menu on item click
+      $('.navbar-item').each(function(e) {
+        $(this).click(function(){
+          if($('#navbar-burger-id').hasClass('is-active')){
+            $('#navbar-burger-id').removeClass('is-active');
+            $('#navbar-menu-id').removeClass('is-active');
+          }
+        });
+      });
+
+      // Open or Close mobile & tablet menu
+      $('#navbar-burger-id').click(function () {
+        if($('#navbar-burger-id').hasClass('is-active')){
+          $('#navbar-burger-id').removeClass('is-active');
+          $('#navbar-menu-id').removeClass('is-active');
+        }else {
+          $('#navbar-burger-id').addClass('is-active');
+          $('#navbar-menu-id').addClass('is-active');
+        }
+      });
+    </script>
+  </body>
+</html>
