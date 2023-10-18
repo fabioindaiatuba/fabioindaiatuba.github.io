@@ -14,7 +14,33 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-  <div w3-include-html="header.html"></div>
+  <header>
+    <nav class="navbar is-dark is-fixed-top role=" navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="./assets/logo.png" class="rotateimg" alt="Logo">
+        </a>
+        <div id="navbar-burger-id" class="navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="navbar-menu-id" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            Início
+          </a>
+          <a class="navbar-item" href="cursos.html">
+            Cursos
+          </a>
+          <a class="navbar-item" href="contact.html">
+            Contato
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <section class="section">
     <div class="container">
@@ -66,8 +92,8 @@
                       Período: 05/2020 até o momento.
                     </p>
                     <p>
-                      Projetos de análise, levantamento de requisitos e desenvolvimento e manutenção
-                      de sistemas para controle movimentação e armazenagem de materiais (MAM) e expedição, sistemas de
+                      Análise, levantamento de requisitos, desenvolvimento e manutenção de sistemas para controle
+                      movimentação e armazenagem de materiais (MAM) e expedição, sistemas de
                       inventários de estoque e de ativos imobilizados, para plataformas Web em reactjs e para coletores
                       de dados mobile android em react-native, desenvolvimento de bibliotecas nativas android para
                       suporte aos hardwares dos coletores modelos Zebra e Chainway. Publicando e disponibilizando
@@ -242,6 +268,8 @@
         $('#navbar-menu-id').addClass('is-active');
       }
     });
+
+
 
     w3.includeHTML();
   </script>
