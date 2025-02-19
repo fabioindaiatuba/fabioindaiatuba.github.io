@@ -15,7 +15,7 @@
   
 </head>
 
-<body class="has-navbar-fixed-top" onload="calcularIdade()">
+<body class="has-navbar-fixed-top">
   <header>
     <nav class="navbar is-dark is-fixed-top role=" navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -224,12 +224,11 @@
       }
     });
 
+    w3.includeHTML();
+
     function calcularIdade() {
-        // Defina a data de nascimento fixa (ano, mês, dia)
-        const dataNascimento = new Date('1990-09-24');
-        
         const dataAtual = new Date();
-        
+        const dataNascimento = new Date('1990-09-24');
         // Calcula a diferença em anos
         let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
         const mesAtual = dataAtual.getMonth();
@@ -240,11 +239,12 @@
             idade--;
         }
 
-        // Exibe a idade usando jQuery
-        $('#var-idade').text(idade + ' anos');
+        // Exibe a idade no elemento
+        document.getElementById('var-idade').textContent = idade;
     }
 
-    w3.includeHTML();
+    // Chama a função assim que a página for carregada
+    window.onload = calcularIdade;
   </script>
 </body>
 
