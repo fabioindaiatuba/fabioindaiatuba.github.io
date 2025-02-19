@@ -12,34 +12,10 @@
   <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <script>
-    // Defina a data de nascimento fixa
-    const dataNascimento = new Date('1980-09-24'); // Exemplo: 15 de maio de 1990
-
-    // Função para calcular a idade
-    function calcularIdade() {
-        const dataAtual = new Date();
-        
-        // Calcula a diferença em anos
-        let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
-        const mesAtual = dataAtual.getMonth();
-        const mesNascimento = dataNascimento.getMonth();
-
-        // Verifica se a pessoa já fez aniversário este ano
-        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && dataAtual.getDate() <script dataNascimento.getDate())) {
-            idade--;
-        }
-
-        // Exibe a idade no elemento
-        document.getElementById('var-idade').textContent = idade;
-    }
-
-    // Chama a função assim que a página for carregada
-    window.onload = calcularIdade;
-  </script>
+  
 </head>
 
-<body class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top" onload="calcularIdade()">
   <header>
     <nav class="navbar is-dark is-fixed-top role=" navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -152,15 +128,14 @@
                     </p>
                     <hr />
                     
-                    <p class="title is-6">
-                      HTML5:
-                    </p>
-                    
                   </div>
                 </div>
 
                 <div class="column is-6">
                   <div class="card-content">
+                    <p class="title is-6">
+                      HTML5:
+                    </p>
                     <p class="subtitle is-7 top-10">
                       Estruturação de
                       páginas web com foco em
@@ -248,6 +223,26 @@
         $('#navbar-menu-id').addClass('is-active');
       }
     });
+
+    function calcularIdade() {
+        // Defina a data de nascimento fixa (ano, mês, dia)
+        const dataNascimento = new Date('1990-09-24');
+        
+        const dataAtual = new Date();
+        
+        // Calcula a diferença em anos
+        let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+        const mesAtual = dataAtual.getMonth();
+        const mesNascimento = dataNascimento.getMonth();
+
+        // Verifica se a pessoa já fez aniversário este ano
+        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && dataAtual.getDate() < dataNascimento.getDate())) {
+            idade--;
+        }
+
+        // Exibe a idade usando jQuery
+        $('#var-idade').text(idade + ' anos');
+    }
 
     w3.includeHTML();
   </script>

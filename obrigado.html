@@ -14,8 +14,7 @@
   
 </head>
 
-<body class="has-navbar-fixed-top">
-
+<body class="has-navbar-fixed-top" onload="calcularIdade()">
 
   <div w3-include-html="header.html"></div>
 
@@ -71,6 +70,26 @@
         $('#navbar-menu-id').addClass('is-active');
       }
     });
+
+    function calcularIdade() {
+        // Defina a data de nascimento fixa (ano, mês, dia)
+        const dataNascimento = new Date('1990-09-24');
+        
+        const dataAtual = new Date();
+        
+        // Calcula a diferença em anos
+        let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+        const mesAtual = dataAtual.getMonth();
+        const mesNascimento = dataNascimento.getMonth();
+
+        // Verifica se a pessoa já fez aniversário este ano
+        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && dataAtual.getDate() < dataNascimento.getDate())) {
+            idade--;
+        }
+
+        // Exibe a idade usando jQuery
+        $('#var-idade').text(idade + ' anos');
+    }
 
     w3.includeHTML();
 
