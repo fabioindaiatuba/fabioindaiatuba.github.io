@@ -11,6 +11,31 @@
   <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>
+    // Defina a data de nascimento fixa
+    const dataNascimento = new Date('1980-09-24'); // Exemplo: 15 de maio de 1990
+
+    // Função para calcular a idade
+    function calcularIdade() {
+        const dataAtual = new Date();
+        
+        // Calcula a diferença em anos
+        let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+        const mesAtual = dataAtual.getMonth();
+        const mesNascimento = dataNascimento.getMonth();
+
+        // Verifica se a pessoa já fez aniversário este ano
+        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && dataAtual.getDate() <script dataNascimento.getDate())) {
+            idade--;
+        }
+
+        // Exibe a idade no elemento
+        document.getElementById('var-idade').textContent = idade;
+    }
+
+    // Chama a função assim que a página for carregada
+    window.onload = calcularIdade;
+  </script>
 </head>
 
 <body class="has-navbar-fixed-top">
