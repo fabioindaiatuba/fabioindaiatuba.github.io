@@ -305,6 +305,30 @@
 
 
     w3.includeHTML();
+
+    // Defina a data de nascimento fixa
+    const dataNascimento = new Date('1980-09-24'); // Exemplo: 15 de maio de 1990
+
+    // Função para calcular a idade
+    function calcularIdade() {
+        const dataAtual = new Date();
+        
+        // Calcula a diferença em anos
+        let idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+        const mesAtual = dataAtual.getMonth();
+        const mesNascimento = dataNascimento.getMonth();
+
+        // Verifica se a pessoa já fez aniversário este ano
+        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && dataAtual.getDate() < dataNascimento.getDate())) {
+            idade--;
+        }
+
+        // Exibe a idade no elemento
+        document.getElementById('idade').textContent = idade;
+    }
+
+    // Chama a função assim que a página for carregada
+    window.onload = calcularIdade;
   </script>
 </body>
 
